@@ -4,21 +4,16 @@
 
 #import "../projectInfo.typ": student, report
 
-#let specialChapter(
+#let chapter(
   content: lorem(40),
-  chapterTitle: "Special Chapter",
-  studentName: "T.U. Delftenaar",
-  showInOutline: true,
+  chapterTitle: "Chapter Title",
   body
 ) = {
-set align(top)
 
 let topMargin = 2.5cm+1.35cm
-set par(justify: true, linebreaks: "optimized")
-set text(size: 10pt,font: "New Computer Modern Math", weight: 500)
+show heading.where(depth: 1): it => block(it.body);
 set page(
-  numbering: "i",
-  margin: (top:topMargin, bottom: 3.16cm),
+  numbering: "1",
   header: 
   [
     #locate(loc => {
@@ -30,8 +25,7 @@ set page(
   ],
   header-ascent: 21.4%,
   footer-descent: 9%,
-
- footer:
+  footer:
   [
     #locate(loc => {
       let n = counter(page).at(loc).first()
@@ -52,21 +46,28 @@ set page(
     })
   ]
 )
-  v(116pt-topMargin+2.5cm)
+set align(top)
+v(116pt-topMargin+3.02cm)
   line(length: 100%, stroke: 2pt)
-  v(-10pt)
+  let pad = 5pt
+  v(pad)
+  align(top+right,
+
+    [    #context{
+        let n = counter(heading).get().first()+1
+        [#text(size: 25pt, weight: 0, style: "normal",font: "New Computer Modern")[Chapter #n]]
+      }])
+  v(pad)
+  line(length: 100%, stroke: 2pt)
+  v(-20pt)
   align(
     right,
     //[#text(size: 24.4pt, font: "New Computer Modern Sans", weight: "bold")[#chapterTitle ]#label(lower(chapterTitle))]
-    
-    [#text(size: 24.4pt, font: "New Computer Modern Sans")[#heading(outlined: showInOutline)[#chapterTitle]]#label(lower(chapterTitle))]
+    text(size: 20pt, font: "New Computer Modern Sans")[#heading(outlined: true,[#chapterTitle])#label(lower(chapterTitle))]
   )
   v(87pt)
   set text(size: 10.5pt,font: "New Computer Modern Math", weight: 500)
-[#content]
 
 pagebreak(to: "even", weak: true)
-
 body
-
 }
