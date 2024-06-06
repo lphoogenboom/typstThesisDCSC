@@ -65,7 +65,7 @@ set page(
   set text(size: 10.5pt,font: "New Computer Modern Math", weight: 500)
 [#content]
 
-pagebreak(to: "even", weak: true)
+pagebreak(to: "even", weak: false)
 
 body
 

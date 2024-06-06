@@ -5,7 +5,7 @@
 #import "../projectInfo.typ": student, report
 
 #let chapter(
-  content: lorem(40),
+  content: "Add a content argument to function call",
   chapterTitle: "Chapter Title",
   body
 ) = {
@@ -20,7 +20,7 @@ set page(
       let titlePage = counter(page).at(label(lower(chapterTitle))).first()
       let thisPage = counter(page).at(loc).first()
       set align(if calc.rem(thisPage, 2) == 0 { left } else { right })
-      if thisPage != titlePage {counter(page).display("i"); v(-9pt) ; line(length: 100%, stroke: 0.5pt)} else {}
+      if thisPage != titlePage {counter(page).display("1"); v(-9pt) ; line(length: 100%, stroke: 0.5pt)} else {}
     })
   ],
   header-ascent: 21.4%,
@@ -67,6 +67,8 @@ v(116pt-topMargin+3.02cm)
   )
   v(87pt)
   set text(size: 10.5pt,font: "New Computer Modern Math", weight: 500)
+
+[#content]
 
 pagebreak(to: "even", weak: true)
 body

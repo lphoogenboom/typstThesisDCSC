@@ -1,5 +1,6 @@
 #import "typFiles/coverpage.typ": *
 #import "typFiles/titlepage.typ": *
+#import "typFiles/acronyms.typ": acro
 
 #set outline(
   indent: 1em
@@ -22,7 +23,16 @@
 
 #include "chapters/acknowledgements.typ"
 
-#set heading(numbering: "1-1")
+#counter(page).update(1)
 #set page(numbering: "1")
+#set heading(numbering: "1-1")
 
 #include "chapters/introduction.typ"
+
+#include "chapters/firstRealChapter.typ"
+
+#include "chapters/someBasics.typ"
+
+#pagebreak()
+#set align(top)
+#acro("API") // --> Application programmable interface (API)

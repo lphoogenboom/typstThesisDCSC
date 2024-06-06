@@ -1,11 +1,11 @@
 #let student = (
-  name: "Laurens Hoogenboom",
-  email: "f.s.lastName@student.tudelft.nl"
+  name: "T.U. Delftenaar",
+  email: "T.U.Delftenaar@student.tudelft.nl"
 )
 
 #let report = (
-  type: "Literature Survey1", // Choose: (Literature Survey | Thesis)
-  title: "Thesis Title1",
-  subtitle: "Optional Subtitle1",
+  type: "Literature Survey", // Choose: (Literature Survey | Thesis)
+  title: "Thesis Titcle",
+  subtitle: "Optional Subtitle",
   coverImage: "../graphics/template/COVER.jpg"
 )
