@@ -1,6 +1,7 @@
 #import "typFiles/coverpage.typ": *
 #import "typFiles/titlepage.typ": *
-#import "typFiles/acronyms.typ": acro
+#import "typFiles/acronyms.typ": acrof, acro
+#import "typFiles/glossary.typ": *
 
 #set outline(
   indent: 1em
@@ -33,6 +34,4 @@
 
 #include "chapters/someBasics.typ"
 
-#pagebreak()
-#set align(top)
-#acro("API") // --> Application programmable interface (API)
+#show: glossary()
